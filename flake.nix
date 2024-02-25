@@ -15,7 +15,14 @@
       devShells = forEachSupportedSystem ({ pkgs }: {
         default = pkgs.mkShell {
           packages = with pkgs; [ python3 virtualenv ] ++
-            (with pkgs.python3Packages; [ pip python-lsp-server rope pyflakes numpy matplotlib pandas]);
+            (with pkgs.python3Packages;
+            [ 
+              python-lsp-server
+              rope
+              pyflakes
+              pandas
+              scikit-learn
+            ]);
         };
       });
     };
