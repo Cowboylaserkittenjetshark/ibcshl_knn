@@ -61,18 +61,19 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, stratify=y, random_sta
 column_transformer = make_column_transformer(
     (OneHotEncoder(handle_unknown='ignore'),
         [
-            'BusinessTravel',
             'Department',
             'EducationField',
             'Gender',
             'JobRole',
-            'MaritalStatus', # Ordinal?
-            'Over18', # Ordinal?
-            'OverTime', # Ordinal?
+            'MaritalStatus',
+            'Over18',
+            'OverTime',
         ]
     ),
     (OrdinalEncoder(),
-        []
+        [
+            'BusinessTravel'
+        ]
     ),
     remainder='passthrough'
 )
