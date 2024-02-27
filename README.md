@@ -1,2 +1,4 @@
 # ibcshl_knn
-KNN
+Use k-nearest neighbors to predict employee stats
+## Usage
+All scripts require `data/data.csv` to be provided at the root of the repo.
