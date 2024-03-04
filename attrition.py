@@ -75,7 +75,7 @@ column_transformer = make_column_transformer(
 
 # Pipeline applying scaler and knn
 clf = Pipeline(
-    steps=[("column_transformer", column_transformer), ("scaler", StandardScaler()), ("knn", KNeighborsClassifier(n_neighbors=11, metric="Minkowski"))]
+    steps=[("column_transformer", column_transformer), ("scaler", StandardScaler()), ("knn", KNeighborsClassifier(n_neighbors=11, metric="euclidean"))]
 )
 
 clf.fit(X_train, y_train)
