@@ -22,6 +22,7 @@
               pyflakes
               pandas
               scikit-learn
+              matplotlib
             ]);
         };
       });
