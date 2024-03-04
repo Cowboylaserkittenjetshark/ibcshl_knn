@@ -14,12 +14,10 @@ data = pd.read_csv(ROOT.joinpath("data.csv"))
 feature_names = [
 "Age",
 "BusinessTravel",
-"DailyRate",
 "Department",
 "DistanceFromHome",
 "Education",
 "EducationField",
-"EmployeeCount",
 "EnvironmentSatisfaction",
 "Gender",
 "HourlyRate",
@@ -29,17 +27,14 @@ feature_names = [
 "JobSatisfaction",
 "MaritalStatus",
 "MonthlyIncome",
-"MonthlyRate",
 "NumCompaniesWorked",
 "Over18",
 "OverTime",
 "PercentSalaryHike",
 "PerformanceRating",
 "RelationshipSatisfaction",
-"StandardHours",
 "StockOptionLevel",
 "TotalWorkingYears",
-"TrainingTimesLastYear",
 "WorkLifeBalance",
 "YearsAtCompany",
 "YearsInCurrentRole",
@@ -80,7 +75,7 @@ column_transformer = make_column_transformer(
 
 # Pipeline applying scaler and knn
 clf = Pipeline(
-    steps=[("column_transformer", column_transformer), ("scaler", StandardScaler()), ("knn", KNeighborsClassifier(n_neighbors=11))]
+    steps=[("column_transformer", column_transformer), ("scaler", StandardScaler()), ("knn", KNeighborsClassifier(n_neighbors=11, metric="Minkowski"))]
 )
 
 clf.fit(X_train, y_train)
