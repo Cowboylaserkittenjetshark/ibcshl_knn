@@ -79,12 +79,12 @@ column_transformer = make_column_transformer(
 
 # Pipeline applying scaler and knn
 clf = Pipeline(
-    steps=[("column_transformer", column_transformer), ("scaler", StandardScaler()), ("knn", KNeighborsClassifier(n_neighbors=15, metric="manhattan"))]
+    steps=[("column_transformer", column_transformer), ("scaler", StandardScaler()), ("knn", KNeighborsClassifier(n_neighbors=15, metric="minkowski", weights='uniform',leaf_size=15, p=1))]
 )
 
 clf.fit(X_train, y_train)
 print("model score: %.3f" % clf.score(X_test, y_test))
-'''train_score = {}
+train_score = {}
 test_score = {}
 n_neighbors = np.arange(2, 30, 1)
 for neighbor in n_neighbors:
@@ -104,17 +104,4 @@ plt.grid()
 plt.show()
 for key, value in test_score.items():
     if value==max(test_score.values()):
-        print(key)'''
-knn_pipe = Pipeline([('mms', MinMaxScaler()),
-                     ('knn', KNeighborsClassifier())])
-params = [{'knn__n_neighbors': [9, 11, 13, 15],
-         'knn__weights': ['uniform', 'distance'],
-         'knn__leaf_size': [15, 20]}]
-gs_knn = GridSearchCV(knn_pipe,
-                      param_grid=params,
-                      scoring='accuracy',
-                      cv=5)
-gs_knn.fit(X_train, y_train)
-gs_knn.best_params_
-# find best model score
-print(gs_knn.score(X_train, y_train))
+        print(key)
