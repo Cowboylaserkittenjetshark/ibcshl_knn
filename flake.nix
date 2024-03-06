@@ -23,6 +23,7 @@
               pandas
               scikit-learn
               matplotlib
+              seaborn
             ]);
         };
       });
