@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
   "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="700.633205pt" height="583.918125pt" viewBox="0 0 700.633205 583.918125" xmlns="http://www.w3.org/2000/svg" version="1.1">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="447.903251pt" height="295.630125pt" viewBox="0 0 447.903251 295.630125" xmlns="http://www.w3.org/2000/svg" version="1.1">
  <metadata>
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
@@ -21,11 +21,11 @@
  </defs>
  <g id="figure_1">
   <g id="patch_1">
-   <path d="M 0 583.918125 
-L 700.633205 583.918125 
-L 700.633205 0 
+   <path d="M 0 295.630125 
+L 447.903251 295.630125 
+L 447.903251 0 
 L 0 0 
-L 0 583.918125 
+L 0 295.630125 
 z
 " style="fill: none"/>
   </g>
@@ -33,80 +33,80 @@ z
    <g id="matplotlib.axis_1"/>
    <g id="matplotlib.axis_2"/>
    <g id="patch_2">
-    <path d="M 582.455726 299.518125 
-C 582.455726 247.502623 564.154776 197.109507 530.776661 157.215725 
-C 497.398546 117.321942 451.025422 90.416102 399.826098 81.237774 
-L 360.695726 299.518125 
+    <path d="M 340.474811 155.374125 
+C 340.474811 130.406684 331.690355 106.217988 315.66886 87.068973 
+C 299.647364 67.919957 277.388265 55.005154 252.812589 50.599557 
+L 234.030011 155.374125 
 z
 " style="fill: #1f77b4; stroke: #ffffff; stroke-linejoin: miter"/>
    </g>
    <g id="patch_3">
-    <path d="M 399.826098 81.237774 
-C 354.055479 73.032632 306.843194 79.42797 264.904887 99.514093 
-C 222.966581 119.600216 188.389711 152.377346 166.092616 193.183148 
-L 360.695726 299.518125 
+    <path d="M 252.812589 50.599557 
+C 230.842692 46.661088 208.180796 49.730851 188.050408 59.37219 
+C 167.920021 69.013529 151.323124 84.746551 140.620518 104.333336 
+L 234.030011 155.374125 
 z
 " style="fill: #ff7f0e; stroke: #ffffff; stroke-linejoin: miter"/>
    </g>
    <g id="patch_4">
-    <path d="M 166.092616 193.183148 
-C 146.348791 229.316223 137.053275 270.244083 139.252168 311.360779 
-C 141.451062 352.477474 155.058664 392.180491 178.543598 426.001721 
-L 360.695726 299.518125 
+    <path d="M 140.620518 104.333336 
+C 131.143482 121.677212 126.681634 141.322585 127.737103 161.058599 
+C 128.792572 180.794613 135.324221 199.852061 146.59699 216.086251 
+L 234.030011 155.374125 
 z
 " style="fill: #2ca02c; stroke: #ffffff; stroke-linejoin: miter"/>
    </g>
    <g id="patch_5">
-    <path d="M 178.543598 426.001721 
-C 191.634804 444.854687 207.573963 461.561444 225.790811 475.524266 
-C 244.00766 489.487088 264.282326 500.537447 285.889432 508.279989 
-L 360.695726 299.518125 
+    <path d="M 146.59699 216.086251 
+C 152.880768 225.135675 160.531565 233.154918 169.275652 239.857073 
+C 178.019739 246.559227 187.751579 251.8634 198.12299 255.57982 
+L 234.030011 155.374125 
 z
 " style="fill: #d62728; stroke: #ffffff; stroke-linejoin: miter"/>
    </g>
    <g id="patch_6">
-    <path d="M 285.889432 508.279989 
-C 305.4032 515.272419 325.801357 519.494401 346.487521 520.822496 
-C 367.173684 522.150591 387.944268 520.571729 408.191999 516.132071 
-L 360.695726 299.518125 
+    <path d="M 198.12299 255.57982 
+C 207.489598 258.936186 217.280714 260.962737 227.210072 261.600223 
+C 237.139431 262.237709 247.109311 261.479855 256.828222 259.348819 
+L 234.030011 155.374125 
 z
 " style="fill: #9467bd; stroke: #ffffff; stroke-linejoin: miter"/>
    </g>
    <g id="patch_7">
-    <path d="M 408.191999 516.132071 
-C 423.947317 512.677451 439.278809 507.514185 453.914154 500.733985 
-C 468.549498 493.953785 482.401526 485.597033 495.224193 475.812166 
-L 360.695726 299.518125 
+    <path d="M 256.828222 259.348819 
+C 264.390775 257.690601 271.749891 255.212234 278.774856 251.957738 
+C 285.799822 248.703242 292.448795 244.692001 298.603675 239.995265 
+L 234.030011 155.374125 
 z
 " style="fill: #8c564b; stroke: #ffffff; stroke-linejoin: miter"/>
    </g>
    <g id="patch_8">
-    <path d="M 495.224193 475.812166 
-C 505.654844 467.852626 515.358542 458.983054 524.221035 449.30788 
-C 533.083528 439.632707 541.069895 429.190054 548.086106 418.102875 
-L 360.695726 299.518125 
+    <path d="M 298.603675 239.995265 
+C 303.610388 236.174686 308.268163 231.917291 312.522159 227.273208 
+C 316.776156 222.629124 320.609612 217.616651 323.977393 212.294805 
+L 234.030011 155.374125 
 z
 " style="fill: #e377c2; stroke: #ffffff; stroke-linejoin: miter"/>
    </g>
    <g id="patch_9">
-    <path d="M 548.086106 418.102875 
-C 554.848404 407.416934 560.684279 396.172118 565.529884 384.491445 
-C 570.37549 372.810771 574.213092 360.736993 577.000708 348.402196 
-L 360.695726 299.518125 
+    <path d="M 323.977393 212.294805 
+C 327.223297 207.165553 330.024516 201.768041 332.350407 196.161318 
+C 334.676298 190.554595 336.518347 184.759182 337.856402 178.838479 
+L 234.030011 155.374125 
 z
 " style="fill: #7f7f7f; stroke: #ffffff; stroke-linejoin: miter"/>
    </g>
    <g id="patch_10">
-    <path d="M 577.000708 348.402196 
-C 578.812021 340.387393 580.176474 332.278108 581.087752 324.111867 
-C 581.999031 315.945626 582.455726 307.735044 582.455726 299.518115 
-L 360.695726 299.518125 
+    <path d="M 337.856402 178.838479 
+C 338.725833 174.991374 339.38077 171.098917 339.818184 167.179121 
+C 340.255597 163.259325 340.474811 159.318246 340.474811 155.37412 
+L 234.030011 155.374125 
 z
 " style="fill: #bcbd22; stroke: #ffffff; stroke-linejoin: miter"/>
    </g>
    <g id="text_1">
     <!-- Sales Executive -->
-    <g style="fill: #262626" transform="translate(547.784754 145.74486) scale(0.1 -0.1)">
+    <g style="fill: #262626" transform="translate(323.832745 82.997833) scale(0.1 -0.1)">
      <defs>
       <path id="DejaVuSans-53" d="M 3425 4513 
 L 3425 3897 
@@ -373,7 +373,7 @@ z
    </g>
    <g id="text_2">
     <!-- Research Scientist -->
-    <g style="fill: #262626" transform="translate(163.339866 82.273065) scale(0.1 -0.1)">
+    <g style="fill: #262626" transform="translate(91.466511 52.531371) scale(0.1 -0.1)">
      <defs>
       <path id="DejaVuSans-52" d="M 2841 2188 
 Q 3044 2119 3236 1894 
@@ -481,7 +481,7 @@ z
    </g>
    <g id="text_3">
     <!-- Laboratory Technician -->
-    <g style="fill: #262626" transform="translate(7.2 315.304419) scale(0.1 -0.1)">
+    <g style="fill: #262626" transform="translate(7.2 164.386421) scale(0.1 -0.1)">
      <defs>
       <path id="DejaVuSans-4c" d="M 628 4666 
 L 1259 4666 
@@ -593,7 +593,7 @@ z
    </g>
    <g id="text_4">
     <!-- Manufacturing Director -->
-    <g style="fill: #262626" transform="translate(96.545633 495.884255) scale(0.1 -0.1)">
+    <g style="fill: #262626" transform="translate(47.045529 251.064743) scale(0.1 -0.1)">
      <defs>
       <path id="DejaVuSans-4d" d="M 628 4666 
 L 1569 4666 
@@ -712,7 +712,7 @@ z
    </g>
    <g id="text_5">
     <!-- Healthcare Representative -->
-    <g style="fill: #262626" transform="translate(211.827637 545.712308) scale(0.1 -0.1)">
+    <g style="fill: #262626" transform="translate(93.289016 274.982208) scale(0.1 -0.1)">
      <defs>
       <path id="DejaVuSans-48" d="M 628 4666 
 L 1259 4666 
@@ -785,7 +785,7 @@ z
    </g>
    <g id="text_6">
     <!-- Manager -->
-    <g style="fill: #262626" transform="translate(463.235996 523.614946) scale(0.1 -0.1)">
+    <g style="fill: #262626" transform="translate(283.249341 264.375474) scale(0.1 -0.1)">
      <use xlink:href="#DejaVuSans-4d"/>
      <use xlink:href="#DejaVuSans-61" x="86.279297"/>
      <use xlink:href="#DejaVuSans-6e" x="147.558594"/>
@@ -797,7 +797,7 @@ z
    </g>
    <g id="text_7">
     <!-- Sales Representative -->
-    <g style="fill: #262626" transform="translate(540.573566 467.046231) scale(0.1 -0.1)">
+    <g style="fill: #262626" transform="translate(320.371374 237.222491) scale(0.1 -0.1)">
      <use xlink:href="#DejaVuSans-53"/>
      <use xlink:href="#DejaVuSans-61" x="63.476562"/>
      <use xlink:href="#DejaVuSans-6c" x="124.755859"/>
@@ -822,7 +822,7 @@ z
    </g>
    <g id="text_8">
     <!-- Research Director -->
-    <g style="fill: #262626" transform="translate(586.0133 395.748151) scale(0.1 -0.1)">
+    <g style="fill: #262626" transform="translate(342.182447 202.999413) scale(0.1 -0.1)">
      <use xlink:href="#DejaVuSans-52"/>
      <use xlink:href="#DejaVuSans-65" x="64.982422"/>
      <use xlink:href="#DejaVuSans-73" x="126.505859"/>
@@ -844,7 +844,7 @@ z
    </g>
    <g id="text_9">
     <!-- Human Resources -->
-    <g style="fill: #262626" transform="translate(603.126955 329.330616) scale(0.1 -0.1)">
+    <g style="fill: #262626" transform="translate(350.397001 171.118996) scale(0.1 -0.1)">
      <defs>
       <path id="DejaVuSans-6d" d="M 3328 2828 
 Q 3544 3216 3844 3400 
@@ -896,7 +896,7 @@ z
    </g>
    <g id="text_10">
     <!-- JobRole -->
-    <g style="fill: #262626" transform="translate(338.516351 16.318125) scale(0.12 -0.12)">
+    <g style="fill: #262626" transform="translate(211.850636 16.318125) scale(0.12 -0.12)">
      <defs>
       <path id="DejaVuSans-4a" d="M 628 4666 
 L 1259 4666 

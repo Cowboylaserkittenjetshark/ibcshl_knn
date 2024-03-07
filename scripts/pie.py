@@ -29,7 +29,7 @@ cats = [
 ]
 
 sns.set_style("whitegrid")
-plt.figure(figsize=(10,10))
+# plt.figure(figsize=(10,10))
 for cat in cats:
     vals = data[cat]
     labels = vals.unique()
