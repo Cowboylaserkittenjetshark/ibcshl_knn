@@ -24,15 +24,15 @@ feature_names = [
 "BusinessTravel",
 #"Department",
 "DistanceFromHome",
-"Education",
+#"Education",
 #"EducationField",
-"EnvironmentSatisfaction",
+#"EnvironmentSatisfaction",
 "Gender",
 "HourlyRate",
 "JobInvolvement",
 "JobLevel",
 #"JobRole",
-"JobSatisfaction",
+#"JobSatisfaction",
 "MaritalStatus",
 "MonthlyIncome",
 "NumCompaniesWorked",
@@ -40,7 +40,7 @@ feature_names = [
 "OverTime",
 "PercentSalaryHike",
 "PerformanceRating",
-"RelationshipSatisfaction",
+#"RelationshipSatisfaction",
 "StockOptionLevel",
 "TotalWorkingYears",
 "WorkLifeBalance",
@@ -83,6 +83,7 @@ column_transformer = make_column_transformer(
 clf = Pipeline(
     steps=[("column_transformer", column_transformer), ("scaler", StandardScaler()), ("knn", KNeighborsClassifier(n_neighbors=15, metric="minkowski", weights='uniform',leaf_size=15, p=1))]
 )
+
 
 clf.fit(X_train, y_train)
 print("model score: %.3f" % clf.score(X_test, y_test))
