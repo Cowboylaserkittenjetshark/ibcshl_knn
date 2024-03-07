@@ -17,9 +17,11 @@ ROOT = pathlib.Path(__file__).parent.resolve().joinpath("data")
 data = pd.read_csv(ROOT.joinpath("data.csv"))
 data['OverTime'] = data['OverTime'].map({'Yes': 1, 'No': 0})
 data['Gender'] = data['Gender'].map({'Male': 1, 'Female': 0})
+data['BusinessTravel'] = data['BusinessTravel'].map({'Non-Travel':0, 'Travel_Rarely':1, 'Travel_Frequently':2})
+data['MaritalStatus'] = data['MaritalStatus'].map({'Married':1, 'Single':0, 'Divorced':0});
 feature_names = [
 "Age",
-#"BusinessTravel",
+"BusinessTravel",
 #"Department",
 "DistanceFromHome",
 "Education",
@@ -31,7 +33,7 @@ feature_names = [
 "JobLevel",
 #"JobRole",
 "JobSatisfaction",
-#"MaritalStatus",
+"MaritalStatus",
 "MonthlyIncome",
 "NumCompaniesWorked",
 #"Over18",
@@ -64,14 +66,14 @@ column_transformer = make_column_transformer(
             #'EducationField',
             'Gender',
             #'JobRole',
-            #'MaritalStatus',
+            'MaritalStatus',
             #'Over18',
             'OverTime',
         ]
     ),
     (OrdinalEncoder(),
         [
-            #'BusinessTravel'
+            'BusinessTravel'
         ]
     ),
     remainder='passthrough'
