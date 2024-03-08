@@ -14,6 +14,12 @@ data.drop(
         "EmployeeNumber",
         "Over18",
         "StandardHours",
+        "DailyRate",
+        "EnvironmentSatisfaction",
+        "JobSatisfaction",
+        "MonthlyRate",
+        "RelationshipSatisfaction",
+        "WorkLifeBalance"
     ], 
     inplace=True
 )
@@ -26,7 +32,8 @@ data['Gender'] = data['Gender'].map({'Male': 1, 'Female': 0})
 
 one_hot_cats = ['Department', 'EducationField', 'JobRole', 'MaritalStatus']
 
-svm = sns.heatmap(data.drop(one_hot_cats, axis=1).corr(), annot=True) # Heatmap without categories that will be one hot encoded
+# plt.figure(figsize=(20,20))
+svm = sns.heatmap(data.drop(one_hot_cats, axis=1).corr(), annot=False, annot_kws={"size": 8}) # Heatmap without categories that will be one hot encoded
 figure = svm.get_figure()
 plt.savefig(OUTPUT.joinpath("heatmap/main.svg"), bbox_inches="tight", transparent = True)
 plt.savefig(OUTPUT.joinpath("heatmap/main.png"), bbox_inches="tight", transparent = True)
