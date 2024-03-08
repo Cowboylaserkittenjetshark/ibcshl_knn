@@ -7,13 +7,13 @@ data = pd.read_csv(DATA_FILE)
 
 # drop bad columns
 data.drop(
-    columns = [
+    columns=[
         "EmployeeCount",
         "EmployeeNumber",
         "Over18",
         "StandardHours",
-    ], 
-    inplace=True
+    ],
+    inplace=True,
 )
 
 # Pie charts
@@ -25,7 +25,7 @@ cats = [
     "Gender",
     "JobRole",
     "MaritalStatus",
-    "OverTime"
+    "OverTime",
 ]
 
 sns.set_style("whitegrid")
@@ -35,6 +35,10 @@ for cat in cats:
     labels = vals.unique()
     plt.pie(vals.value_counts(), labels=labels)
     plt.title(cat)
-    plt.savefig(OUTPUT.joinpath(f"pie/{cat}.svg"), bbox_inches="tight", transparent = True)
-    plt.savefig(OUTPUT.joinpath(f"pie/{cat}.png"), bbox_inches="tight", transparent = True)
+    plt.savefig(
+        OUTPUT.joinpath(f"pie/{cat}.svg"), bbox_inches="tight", transparent=True
+    )
+    plt.savefig(
+        OUTPUT.joinpath(f"pie/{cat}.png"), bbox_inches="tight", transparent=True
+    )
     plt.clf()

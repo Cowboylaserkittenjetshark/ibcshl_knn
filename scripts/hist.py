@@ -8,22 +8,25 @@ data = pd.read_csv(DATA_FILE)
 
 # drop bad columns
 data.drop(
-    columns = [
+    columns=[
         "EmployeeCount",
         "EmployeeNumber",
         "Over18",
         "StandardHours",
-    ], 
-    inplace=True
+    ],
+    inplace=True,
 )
 
 # Vis for onehot-ed cols
-cats = ['Department', 'EducationField', 'JobRole', 'MaritalStatus', 'OverTime']
+cats = ["Department", "EducationField", "JobRole", "MaritalStatus", "OverTime"]
 for cat in cats:
     cat_data = data[["Attrition", cat]]
 
-
     sns.histplot(data=data, x="Attrition", hue=cat, kde=True)
-    plt.savefig(OUTPUT.joinpath(f"hist/{cat}.svg"), bbox_inches="tight", transparent = True)
-    plt.savefig(OUTPUT.joinpath(f"hist/{cat}.png"), bbox_inches="tight", transparent = True)
+    plt.savefig(
+        OUTPUT.joinpath(f"hist/{cat}.svg"), bbox_inches="tight", transparent=True
+    )
+    plt.savefig(
+        OUTPUT.joinpath(f"hist/{cat}.png"), bbox_inches="tight", transparent=True
+    )
     plt.clf()
