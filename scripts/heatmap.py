@@ -42,7 +42,7 @@ plt.clf()
 # Heatmaps for onehot-ed cols
 for cat in one_hot_cats:
     cat_data = data[["Attrition", cat]] # Select only attrition and category to one hot encode
-    heatmap_data = pd.get_dummies(cat_data, columns = [cat]) # One hot encode
+    heatmap_data = pd.get_dummies(cat_data, columns = [cat], prefix='', prefix_sep='') # One hot encode
     svm = sns.heatmap(heatmap_data.corr(), annot=True)
     plt.savefig(OUTPUT.joinpath(f"heatmap/{cat}.svg"), bbox_inches="tight", transparent = True)
     plt.savefig(OUTPUT.joinpath(f"heatmap/{cat}.png"), bbox_inches="tight", transparent = True)
