@@ -64,16 +64,16 @@ column_transformer = make_column_transformer(
         [
             #'Department',
             #'EducationField',
-            'Gender',
+            #'Gender',
             #'JobRole',
-            'MaritalStatus',
+            # 'MaritalStatus',
             #'Over18',
-            'OverTime',
+            #'OverTime',
         ]
     ),
     (OrdinalEncoder(),
         [
-            'BusinessTravel'
+            # 'BusinessTravel'
         ]
     ),
     remainder='passthrough'
