@@ -5,7 +5,7 @@ from common import DATA_FILE, OUTPUT
 
 data = pd.read_csv(DATA_FILE)
 
-# drop bad columns
+# Drop bad columns
 data.drop(
     columns=[
         "EmployeeCount",
@@ -29,7 +29,6 @@ cats = [
 ]
 
 sns.set_style("whitegrid")
-# plt.figure(figsize=(10,10))
 for cat in cats:
     vals = data[cat]
     labels = vals.unique()
