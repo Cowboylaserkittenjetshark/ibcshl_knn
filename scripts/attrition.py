@@ -18,10 +18,11 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import numpy as np
 
-ROOT = pathlib.Path(__file__).parent.resolve().joinpath("data")
+from common import DATA_FILE, OUTPUT
+
 
 # reading in data
-data = pd.read_csv(ROOT.joinpath("data.csv"))
+data = pd.read_csv(DATA_FILE)
 data["OverTime"] = data["OverTime"].map({"Yes": 1, "No": 0})
 data["Gender"] = data["Gender"].map({"Male": 1, "Female": 0})
 data["BusinessTravel"] = data["BusinessTravel"].map(
@@ -126,7 +127,12 @@ plt.legend()
 plt.xlim(0, 33)
 plt.ylim(0.60, 0.90)
 plt.grid()
-plt.show()
+plt.savefig(
+    OUTPUT.joinpath("neighbors.svg"), bbox_inches="tight", transparent=True
+)
+plt.savefig(
+    OUTPUT.joinpath("neighbors.png"), bbox_inches="tight", transparent=True
+)
 for key, value in test_score.items():
     if value == max(test_score.values()):
         print(key)
