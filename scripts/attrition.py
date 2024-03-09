@@ -105,7 +105,7 @@ for key, value in test_score.items():
 k_range = range(1, 40)
 scores = []
 for k in k_range:
-    knn = KNeighborsClassifier(n_neighbors=k,metric='manhattan')
+    knn = KNeighborsClassifier(n_neighbors=k,metric='minkowski')
     knn.fit(X_train,np.ravel(y_train,order='C'))
     y_pred = knn.predict(X_test)
     # appending the accuracy scores in the dictionary named scores.
@@ -142,4 +142,20 @@ p = sns.lineplot(train_scores,label='Train Score')
 p = sns.lineplot(test_scores,label='Test Score')
 plt.savefig(
     OUTPUT.joinpath("test.png"), bbox_inches="tight", transparent=True
+)
+error = []
+for i in range(1, 40):
+    knn = KNeighborsClassifier(n_neighbors=i, metric='manhattan')
+    knn.fit(X_train, y_train)
+    pred_i = knn.predict(X_test)
+    error.append(np.mean(pred_i != y_test))
+    # Create a plot of Mean error versus kvalue.
+plt.figure(figsize=(12, 6))
+plt.plot(range(1, 40), error, color='red', linestyle='dashed', marker='o',
+         markerfacecolor='blue', markersize=10)
+plt.title('Error Rate K Value')
+plt.xlabel('K Value')
+plt.ylabel('Mean Error')
+plt.savefig(
+    OUTPUT.joinpath("error.png"), bbox_inches="tight", transparent=True
 )
