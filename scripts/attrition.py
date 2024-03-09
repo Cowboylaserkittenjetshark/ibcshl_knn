@@ -12,7 +12,7 @@ from sklearn.preprocessing import (
 )
 import matplotlib.pyplot as plt
 import numpy as np
-
+import seaborn as sns
 from common import DATA_FILE, OUTPUT
 
 
@@ -105,7 +105,7 @@ for key, value in test_score.items():
 k_range = range(1, 40)
 scores = []
 for k in k_range:
-    knn = KNeighborsClassifier(n_neighbors=k,metric='minkowski')
+    knn = KNeighborsClassifier(n_neighbors=k,metric='manhattan')
     knn.fit(X_train,np.ravel(y_train,order='C'))
     y_pred = knn.predict(X_test)
     # appending the accuracy scores in the dictionary named scores.
@@ -116,4 +116,30 @@ plt.xlabel('Value of K')
 plt.ylabel('Testing Accuracy')
 plt.savefig(
     OUTPUT.joinpath("minkowski.png"), bbox_inches="tight", transparent=True
+)
+test_scores = []
+train_scores = []
+for i in range(1,15):
+    knn = KNeighborsClassifier(i)
+    knn.fit(X_train,y_train) 
+    train_scores.append(knn.score(X_train,y_train))
+    test_scores.append(knn.score(X_test,y_test))
+    
+## Training Evaluation
+max_train_score = max(train_scores)
+# # Store the max train test score index by enumerating through all the scores.
+train_scores_ind = [i for i, v in enumerate(train_scores) if v == max_train_score]
+# Store the max score in the first curly parenthesis and the indices in the second.
+# The lambda function takes the index starting at zero therefore one is added to get the k value.
+print('Max train score {} % and k = {}'.format(max_train_score*100,list(map(lambda x: x+1, train_scores_ind))))
+## Testing Evaluation
+max_test_score = max(test_scores)
+test_scores_ind = [i for i, v in enumerate(test_scores) if v == max_test_score]
+print('Max test score {} % and k = {}'.format(max_test_score*100,list(map(lambda x: x+1, test_scores_ind))))
+## Train Test Evaluation by comparative graph.
+plt.figure(figsize=(12,5))
+p = sns.lineplot(train_scores,label='Train Score')
+p = sns.lineplot(test_scores,label='Test Score')
+plt.savefig(
+    OUTPUT.joinpath("test.png"), bbox_inches="tight", transparent=True
 )
