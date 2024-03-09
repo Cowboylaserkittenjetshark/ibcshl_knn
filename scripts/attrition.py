@@ -3,6 +3,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.pipeline import Pipeline
 from sklearn.compose import make_column_transformer
+import sklearn.metrics as metrics
 from sklearn.preprocessing import (
     StandardScaler,
     LabelEncoder,
@@ -75,7 +76,7 @@ clf = Pipeline(
 
 clf.fit(X_train, y_train)
 print("model score: %.3f" % clf.score(X_test, y_test))
-train_score = {}
+'''train_score = {}
 test_score = {}
 n_neighbors = np.arange(2, 30, 1)
 for neighbor in n_neighbors:
@@ -100,4 +101,19 @@ plt.savefig(
 )
 for key, value in test_score.items():
     if value == max(test_score.values()):
-        print(key)
+        print(key)'''
+k_range = range(1, 40)
+scores = []
+for k in k_range:
+    knn = KNeighborsClassifier(n_neighbors=k,metric='minkowski')
+    knn.fit(X_train,np.ravel(y_train,order='C'))
+    y_pred = knn.predict(X_test)
+    # appending the accuracy scores in the dictionary named scores.
+    scores.append(metrics.accuracy_score(y_test, y_pred))
+print(scores)
+plt.plot(k_range, scores)
+plt.xlabel('Value of K')
+plt.ylabel('Testing Accuracy')
+plt.savefig(
+    OUTPUT.joinpath("minkowski.png"), bbox_inches="tight", transparent=True
+)
