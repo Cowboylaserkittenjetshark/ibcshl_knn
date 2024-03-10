@@ -67,7 +67,7 @@ clf = Pipeline(
         (
             "knn",
             KNeighborsClassifier(
-                n_neighbors=15, metric="minkowski", weights="uniform", leaf_size=15, p=1
+                n_neighbors=19, metric="manhattan", weights="uniform", leaf_size=15
             ),
         ),
     ]
@@ -76,32 +76,6 @@ clf = Pipeline(
 
 clf.fit(X_train, y_train)
 print("model score: %.3f" % clf.score(X_test, y_test))
-'''train_score = {}
-test_score = {}
-n_neighbors = np.arange(2, 30, 1)
-for neighbor in n_neighbors:
-    knn = KNeighborsClassifier(n_neighbors=neighbor)
-    knn.fit(X_train, y_train)
-    train_score[neighbor] = knn.score(X_train, y_train)
-    test_score[neighbor] = knn.score(X_test, y_test)
-plt.plot(n_neighbors, train_score.values(), label="Train Accuracy")
-plt.plot(n_neighbors, test_score.values(), label="Test Accuracy")
-plt.xlabel("Number Of Neighbors")
-plt.ylabel("Accuracy")
-plt.title("KNN: Varying number of Neighbors")
-plt.legend()
-plt.xlim(0, 33)
-plt.ylim(0.60, 0.90)
-plt.grid()
-plt.savefig(
-    OUTPUT.joinpath("neighbors.svg"), bbox_inches="tight", transparent=True
-)
-plt.savefig(
-    OUTPUT.joinpath("neighbors.png"), bbox_inches="tight", transparent=True
-)
-for key, value in test_score.items():
-    if value == max(test_score.values()):
-        print(key)'''
 k_range = range(1, 40)
 scores = []
 for k in k_range:
@@ -119,20 +93,14 @@ plt.savefig(
 )
 test_scores = []
 train_scores = []
-for i in range(1,15):
-    knn = KNeighborsClassifier(i)
+for i in range(1,40):
+    knn = KNeighborsClassifier(i, metric='manhattan')
     knn.fit(X_train,y_train) 
     train_scores.append(knn.score(X_train,y_train))
     test_scores.append(knn.score(X_test,y_test))
-    
-## Training Evaluation
 max_train_score = max(train_scores)
-# # Store the max train test score index by enumerating through all the scores.
 train_scores_ind = [i for i, v in enumerate(train_scores) if v == max_train_score]
-# Store the max score in the first curly parenthesis and the indices in the second.
-# The lambda function takes the index starting at zero therefore one is added to get the k value.
 print('Max train score {} % and k = {}'.format(max_train_score*100,list(map(lambda x: x+1, train_scores_ind))))
-## Testing Evaluation
 max_test_score = max(test_scores)
 test_scores_ind = [i for i, v in enumerate(test_scores) if v == max_test_score]
 print('Max test score {} % and k = {}'.format(max_test_score*100,list(map(lambda x: x+1, test_scores_ind))))
