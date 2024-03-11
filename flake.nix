@@ -12,9 +12,16 @@
       });
     in
     {
-      devShells = forEachSupportedSystem ({ pkgs }: {
+      devShells = forEachSupportedSystem ({ pkgs }:
+      let
+        catppuccin-matplotlib = ps: ps.callPackage ./nix/catppuccin-matplotlib.nix {};
+        pythonLayered = pkgs.python3.withPackages(ps: with ps; [
+          (catppuccin-matplotlib ps)
+        ]);
+      in  
+      {
         default = pkgs.mkShell {
-          packages = with pkgs; [ python3 virtualenv ] ++
+          packages = with pkgs; [ pythonLayered virtualenv ] ++
             (with pkgs.python3Packages;
             [ 
               python-lsp-server

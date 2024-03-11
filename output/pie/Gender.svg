@@ -25,9 +25,8 @@
 L 280.512 295.630125 
 L 280.512 0 
 L 0 0 
-L 0 295.630125 
 z
-" style="fill: none"/>
+" style="fill: #1e1e2e"/>
   </g>
   <g id="axes_1">
    <g id="matplotlib.axis_1"/>
@@ -44,7 +43,7 @@ C 33.830333 138.456046 32.494039 155.435298 35.121714 172.025774
 C 37.74939 188.61625 44.267162 204.351539 54.140357 217.940822 
 L 140.256 155.374125 
 z
-" style="fill: #1f77b4; stroke: #ffffff; stroke-linejoin: miter"/>
+" style="fill: #89b4fa; stroke: #313244; stroke-linejoin: miter"/>
    </g>
    <g id="patch_3">
     <path d="M 54.140357 217.940822 
@@ -54,11 +53,11 @@ C 194.524684 249.663843 213.160933 236.12381 226.371663 217.940793
 C 239.582393 199.757776 246.700804 177.849547 246.7008 155.374105 
 L 140.256 155.374125 
 z
-" style="fill: #ff7f0e; stroke: #ffffff; stroke-linejoin: miter"/>
+" style="fill: #fab387; stroke: #313244; stroke-linejoin: miter"/>
    </g>
    <g id="text_1">
     <!-- Female -->
-    <g style="fill: #262626" transform="translate(67.918727 46.77498) scale(0.1 -0.1)">
+    <g style="fill: #cdd6f4" transform="translate(67.918727 46.77498) scale(0.1 -0.1)">
      <defs>
       <path id="DejaVuSans-46" d="M 628 4666 
 L 3309 4666 
@@ -179,7 +178,7 @@ z
    </g>
    <g id="text_2">
     <!-- Male -->
-    <g style="fill: #262626" transform="translate(176.438596 269.492017) scale(0.1 -0.1)">
+    <g style="fill: #cdd6f4" transform="translate(176.438596 269.492017) scale(0.1 -0.1)">
      <defs>
       <path id="DejaVuSans-4d" d="M 628 4666 
 L 1569 4666 
@@ -206,7 +205,7 @@ z
    </g>
    <g id="text_3">
     <!-- Gender -->
-    <g style="fill: #262626" transform="translate(118.145062 16.318125) scale(0.12 -0.12)">
+    <g style="fill: #cdd6f4" transform="translate(118.145062 16.318125) scale(0.12 -0.12)">
      <defs>
       <path id="DejaVuSans-47" d="M 3809 666 
 L 3809 1919 

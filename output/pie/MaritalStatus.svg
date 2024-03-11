@@ -25,9 +25,8 @@
 L 281.499517 295.630125 
 L 281.499517 0 
 L 0 0 
-L 0 295.630125 
 z
-" style="fill: none"/>
+" style="fill: #1e1e2e"/>
   </g>
   <g id="axes_1">
    <g id="matplotlib.axis_1"/>
@@ -40,7 +39,7 @@ C 128.756931 46.455383 102.807799 52.451079 81.331401 66.726581
 C 59.855004 81.002082 44.281331 102.606863 37.527064 127.494721 
 L 140.256 155.374125 
 z
-" style="fill: #1f77b4; stroke: #ffffff; stroke-linejoin: miter"/>
+" style="fill: #89b4fa; stroke: #313244; stroke-linejoin: miter"/>
    </g>
    <g id="patch_3">
     <path d="M 37.527064 127.494721 
@@ -50,7 +49,7 @@ C 73.681574 240.340087 88.90051 250.31612 105.852015 256.105755
 C 122.803519 261.895389 140.945361 263.31343 158.590576 260.228018 
 L 140.256 155.374125 
 z
-" style="fill: #ff7f0e; stroke: #ffffff; stroke-linejoin: miter"/>
+" style="fill: #fab387; stroke: #313244; stroke-linejoin: miter"/>
    </g>
    <g id="patch_4">
     <path d="M 158.590576 260.228018 
@@ -58,11 +57,11 @@ C 183.261782 255.914052 205.636065 243.028111 221.748686 223.853593
 C 237.861307 204.679076 246.7008 180.419657 246.7008 155.374125 
 L 140.256 155.374125 
 z
-" style="fill: #2ca02c; stroke: #ffffff; stroke-linejoin: miter"/>
+" style="fill: #a6e3a1; stroke: #313244; stroke-linejoin: miter"/>
    </g>
    <g id="text_1">
     <!-- Single -->
-    <g style="fill: #262626" transform="translate(155.72527 42.070581) scale(0.1 -0.1)">
+    <g style="fill: #cdd6f4" transform="translate(155.72527 42.070581) scale(0.1 -0.1)">
      <defs>
       <path id="DejaVuSans-53" d="M 3425 4513 
 L 3425 3897 
@@ -204,7 +203,7 @@ z
    </g>
    <g id="text_2">
     <!-- Married -->
-    <g style="fill: #262626" transform="translate(15.663002 237.037792) scale(0.1 -0.1)">
+    <g style="fill: #cdd6f4" transform="translate(15.663002 237.037792) scale(0.1 -0.1)">
      <defs>
       <path id="DejaVuSans-4d" d="M 628 4666 
 L 1569 4666 
@@ -310,7 +309,7 @@ z
    </g>
    <g id="text_3">
     <!-- Divorced -->
-    <g style="fill: #262626" transform="translate(229.897954 233.460915) scale(0.1 -0.1)">
+    <g style="fill: #cdd6f4" transform="translate(229.897954 233.460915) scale(0.1 -0.1)">
      <defs>
       <path id="DejaVuSans-44" d="M 1259 4147 
 L 1259 519 
@@ -396,7 +395,7 @@ z
    </g>
    <g id="text_4">
     <!-- MaritalStatus -->
-    <g style="fill: #262626" transform="translate(100.454437 16.318125) scale(0.12 -0.12)">
+    <g style="fill: #cdd6f4" transform="translate(100.454437 16.318125) scale(0.12 -0.12)">
      <defs>
       <path id="DejaVuSans-74" d="M 1172 4494 
 L 1172 3500 
