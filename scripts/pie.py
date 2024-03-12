@@ -1,9 +1,6 @@
 import pandas as pd
 import matplotlib.pyplot as plt
-import matplotlib as mpl
-import mplcatppuccin
-import seaborn as sns
-from common import DATA_FILE, OUTPUT
+from common import DATA_FILE, OUTPUT, TRANSPARENT
 
 data = pd.read_csv(DATA_FILE)
 
@@ -30,17 +27,15 @@ cats = [
     "OverTime",
 ]
 
-sns.set_style("whitegrid")
-mpl.style.use("mocha")
 for cat in cats:
     vals = data[cat]
     labels = vals.unique()
     plt.pie(vals.value_counts(), labels=labels)
     plt.title(cat)
     plt.savefig(
-        OUTPUT.joinpath(f"pie/{cat}.svg"), bbox_inches="tight", transparent=False
+        OUTPUT.joinpath(f"pie/{cat}.svg"), bbox_inches="tight", transparent=TRANSPARENT
     )
     plt.savefig(
-        OUTPUT.joinpath(f"pie/{cat}.png"), bbox_inches="tight", transparent=False
+        OUTPUT.joinpath(f"pie/{cat}.png"), bbox_inches="tight", transparent=TRANSPARENT
     )
     plt.clf()

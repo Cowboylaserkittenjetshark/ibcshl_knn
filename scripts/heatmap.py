@@ -2,7 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-from common import DATA_FILE, OUTPUT
+from common import DATA_FILE, OUTPUT, TRANSPARENT
 
 # reading in data
 data = pd.read_csv(DATA_FILE)
@@ -34,13 +34,12 @@ data["Gender"] = data["Gender"].map({"Male": 1, "Female": 0})
 
 one_hot_cats = ["Department", "EducationField", "JobRole", "MaritalStatus"]
 
-# plt.figure(figsize=(20,20))
 svm = sns.heatmap(
     data.drop(one_hot_cats, axis=1).corr(), annot=False, annot_kws={"size": 8}
 )  # Heatmap without categories that will be one hot encoded
 figure = svm.get_figure()
-plt.savefig(OUTPUT.joinpath("heatmap/main.svg"), bbox_inches="tight", transparent=True)
-plt.savefig(OUTPUT.joinpath("heatmap/main.png"), bbox_inches="tight", transparent=True)
+plt.savefig(OUTPUT.joinpath("heatmap/main.svg"), bbox_inches="tight", transparent=TRANSPARENT)
+plt.savefig(OUTPUT.joinpath("heatmap/main.png"), bbox_inches="tight", transparent=TRANSPARENT)
 plt.clf()
 
 # Heatmaps for onehot-ed cols
@@ -53,9 +52,9 @@ for cat in one_hot_cats:
     )  # One hot encode
     svm = sns.heatmap(heatmap_data.corr(), annot=True)
     plt.savefig(
-        OUTPUT.joinpath(f"heatmap/{cat}.svg"), bbox_inches="tight", transparent=True
+        OUTPUT.joinpath(f"heatmap/{cat}.svg"), bbox_inches="tight", transparent=TRANSPARENT
     )
     plt.savefig(
-        OUTPUT.joinpath(f"heatmap/{cat}.png"), bbox_inches="tight", transparent=True
+        OUTPUT.joinpath(f"heatmap/{cat}.png"), bbox_inches="tight", transparent=TRANSPARENT
     )
     plt.clf()

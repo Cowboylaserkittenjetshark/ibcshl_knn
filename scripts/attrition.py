@@ -15,11 +15,16 @@ from sklearn.preprocessing import (
 import matplotlib.pyplot as plt
 import numpy as np
 import seaborn as sns
+<<<<<<< Updated upstream
 from common import DATA_FILE, OUTPUT
 
 sns.set_style("whitegrid")
 mpl.style.use("mocha")
 plt.grid(c='white')
+=======
+from common import DATA_FILE, OUTPUT, TRANSPARENT
+
+>>>>>>> Stashed changes
 # Reading in data
 data = pd.read_csv(DATA_FILE)
 
@@ -92,7 +97,7 @@ plt.plot(k_range, scores)
 plt.xlabel('Value of K')
 plt.ylabel('Testing Accuracy')
 plt.savefig(
-    OUTPUT.joinpath("minkowski.png"), bbox_inches="tight", transparent=True
+    OUTPUT.joinpath("minkowski.png"), bbox_inches="tight", transparent=TRANSPARENT
 )
 test_scores = []
 train_scores = []
@@ -112,7 +117,7 @@ plt.figure(figsize=(12,5))
 p = sns.lineplot(train_scores,label='Train Score')
 p = sns.lineplot(test_scores,label='Test Score')
 plt.savefig(
-    OUTPUT.joinpath("test.png"), bbox_inches="tight", transparent=True
+    OUTPUT.joinpath("test.png"), bbox_inches="tight", transparent=TRANSPARENT
 )
 error = []
 for i in range(1, 40):
@@ -128,5 +133,5 @@ plt.title('Error Rate K Value')
 plt.xlabel('K Value')
 plt.ylabel('Mean Error')
 plt.savefig(
-    OUTPUT.joinpath("error.png"), bbox_inches="tight", transparent=True
+    OUTPUT.joinpath("error.png"), bbox_inches="tight", transparent=TRANSPARENT
 )

@@ -1,7 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
-from common import DATA_FILE, OUTPUT
+from common import DATA_FILE, OUTPUT, TRANSPARENT
 
 OUTPUT.joinpath("hist/").mkdir(exist_ok=True)
 data = pd.read_csv(DATA_FILE)
@@ -24,9 +24,9 @@ for cat in cats:
 
     sns.histplot(data=data, x="Attrition", hue=cat, kde=True)
     plt.savefig(
-        OUTPUT.joinpath(f"hist/{cat}.svg"), bbox_inches="tight", transparent=True
+        OUTPUT.joinpath(f"hist/{cat}.svg"), bbox_inches="tight", transparent=TRANSPARENT
     )
     plt.savefig(
-        OUTPUT.joinpath(f"hist/{cat}.png"), bbox_inches="tight", transparent=True
+        OUTPUT.joinpath(f"hist/{cat}.png"), bbox_inches="tight", transparent=TRANSPARENT
     )
     plt.clf()
