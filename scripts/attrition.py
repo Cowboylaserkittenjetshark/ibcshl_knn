@@ -4,6 +4,8 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.pipeline import Pipeline
 from sklearn.compose import make_column_transformer
 import sklearn.metrics as metrics
+import mplcatppuccin
+import matplotlib as mpl
 from sklearn.preprocessing import (
     StandardScaler,
     LabelEncoder,
@@ -15,7 +17,9 @@ import numpy as np
 import seaborn as sns
 from common import DATA_FILE, OUTPUT
 
-
+sns.set_style("whitegrid")
+mpl.style.use("mocha")
+plt.grid(c='white')
 # Reading in data
 data = pd.read_csv(DATA_FILE)
 
@@ -56,7 +60,6 @@ y = data["Attrition"]
 le = LabelEncoder()
 y = le.fit_transform(y)
 target_values = le.classes_
-
 # Split data
 X_train, X_test, y_train, y_test = train_test_split(X, y, stratify=y, random_state=0)
 
