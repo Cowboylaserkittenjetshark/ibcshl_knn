@@ -50,7 +50,7 @@ for cat in one_hot_cats:
     heatmap_data = pd.get_dummies(
         cat_data, columns=[cat], prefix="", prefix_sep=""
     )  # One hot encode
-    svm = sns.heatmap(heatmap_data.corr(), annot=True)
+    svm = sns.heatmap(heatmap_data.corr(), annot=True, fmt=".2f")
     plt.savefig(
         OUTPUT.joinpath(f"heatmap/{cat}.svg"), bbox_inches="tight", transparent=TRANSPARENT
     )
