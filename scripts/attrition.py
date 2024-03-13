@@ -14,8 +14,12 @@ import matplotlib.pyplot as plt
 import numpy as np
 import seaborn as sns
 from common import DATA_FILE, OUTPUT, TRANSPARENT
+from mplcatppuccin.palette import load_color
 
-plt.grid(c='white')
+color = load_color("mocha", "overlay1")
+
+
+plt.grid(c=color)
 
 # Reading in data
 data = pd.read_csv(DATA_FILE)
@@ -76,21 +80,24 @@ clf = Pipeline(
 
 clf.fit(X_train, y_train)
 print("model score: %.3f" % clf.score(X_test, y_test))
-k_range = range(1, 40)
-scores = []
-for k in k_range:
-    knn = KNeighborsClassifier(n_neighbors=k,metric='minkowski')
-    knn.fit(X_train,np.ravel(y_train,order='C'))
-    y_pred = knn.predict(X_test)
-    # appending the accuracy scores in the dictionary named scores.
-    scores.append(metrics.accuracy_score(y_test, y_pred))
-print(scores)
-plt.plot(k_range, scores)
-plt.xlabel('Value of K')
-plt.ylabel('Testing Accuracy')
-plt.savefig(
-    OUTPUT.joinpath("minkowski.png"), bbox_inches="tight", transparent=TRANSPARENT
-)
+for dMetric in ["minkowski", "euclidean", "manhattan"]:
+    k_range = range(1, 40)
+    scores = []
+    for k in k_range:
+        knn = KNeighborsClassifier(n_neighbors=k,metric=dMetric)
+        knn.fit(X_train,np.ravel(y_train,order='C'))
+        y_pred = knn.predict(X_test)
+        # appending the accuracy scores in the dictionary named scores.
+        scores.append(metrics.accuracy_score(y_test, y_pred))
+    print(scores)
+    plt.plot(k_range, scores)
+    plt.xlabel('Value of K')
+    plt.ylabel('Testing Accuracy')
+    plt.savefig(
+        OUTPUT.joinpath(f"{dMetric}.png"), bbox_inches="tight", transparent=TRANSPARENT
+    )
+    plt.clf()
+
 test_scores = []
 train_scores = []
 for i in range(1,40):
@@ -112,8 +119,9 @@ plt.savefig(
     OUTPUT.joinpath("test.png"), bbox_inches="tight", transparent=TRANSPARENT
 )
 error = []
+
 for i in range(1, 40):
-    knn = KNeighborsClassifier(n_neighbors=i, metric='manhattan')
+    knn = KNeighborsClassifier(n_neighbors=i, metric="manhattan")
     knn.fit(X_train, y_train)
     pred_i = knn.predict(X_test)
     error.append(np.mean(pred_i != y_test))
