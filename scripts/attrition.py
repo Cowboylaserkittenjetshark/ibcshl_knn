@@ -18,9 +18,6 @@ from mplcatppuccin.palette import load_color
 
 color = load_color("mocha", "overlay1")
 
-
-plt.grid(c=color)
-
 # Reading in data
 data = pd.read_csv(DATA_FILE)
 
@@ -77,10 +74,11 @@ clf = Pipeline(
     ]
 )
 
-
 clf.fit(X_train, y_train)
 print("model score: %.3f" % clf.score(X_test, y_test))
+
 for dMetric in ["minkowski", "euclidean", "manhattan"]:
+    plt.grid(c=color)
     k_range = range(1, 40)
     scores = []
     for k in k_range:
