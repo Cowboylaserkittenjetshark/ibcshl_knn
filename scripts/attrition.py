@@ -1,9 +1,10 @@
 import pandas as pd
-from sklearn.model_selection import train_test_split
+from sklearn.model_selection import train_test_split, cross_val_score
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.pipeline import Pipeline
 from sklearn.compose import make_column_transformer
 import sklearn.metrics as metrics
+from sklearn.metrics import classification_report, confusion_matrix
 from sklearn.preprocessing import (
     StandardScaler,
     LabelEncoder,
@@ -55,6 +56,7 @@ feature_names = [
 
 X = data[feature_names]
 y = data["Attrition"]
+print(X.isna().sum())
 le = LabelEncoder()
 y = le.fit_transform(y)
 target_values = le.classes_
@@ -76,7 +78,13 @@ clf = Pipeline(
 
 clf.fit(X_train, y_train)
 print("model score: %.3f" % clf.score(X_test, y_test))
-
+classifier = KNeighborsClassifier(n_neighbors=11, metric = "manhattan")
+classifier.fit(X_train, np.ravel(y_train,order='C'))
+y_pred = classifier.predict(X_test)
+print(confusion_matrix(y_test, y_pred))
+print(classification_report(y_test, y_pred))
+accuracy =  metrics.accuracy_score(y_test,y_pred)*100
+print(accuracy)
 for dMetric in ["minkowski", "euclidean", "manhattan"]:
     plt.grid(c=color)
     k_range = range(1, 40)
@@ -133,3 +141,26 @@ plt.ylabel('Mean Error')
 plt.savefig(
     OUTPUT.joinpath("error.png"), bbox_inches="tight", transparent=TRANSPARENT
 )
+knn_cv = KNeighborsClassifier(n_neighbors=15)
+scaler = StandardScaler()
+scaler.fit(X)
+X = scaler.transform(X)
+#train model with cv of 10
+cv_scores = cross_val_score(knn_cv, X, np.ravel(y,order='C'), cv=10)
+#print each cv score (accuracy) and average them
+print(cv_scores)
+print(np.mean(cv_scores))
+scaler = StandardScaler()
+scaler.fit(X)
+'''# Train with 10 fold cross validation by an outer k value ranges and nested cross validation scores.
+X = scaler.transform(X)
+scores = []
+k_range = range(1, 40)
+for k in k_range:
+#train model with cv of 10
+    knn_cv = KNeighborsClassifier(n_neighbors=k)
+    cv_scores = cross_val_score(knn_cv, X, np.ravel(y,order='C'), cv=10)
+#print each cv score (accuracy) and average them
+    print(k)
+    print(cv_scores)
+    print(np.mean(cv_scores))'''
