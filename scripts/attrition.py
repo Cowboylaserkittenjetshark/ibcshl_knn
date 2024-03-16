@@ -61,10 +61,19 @@ le = LabelEncoder()
 y = le.fit_transform(y)
 target_values = le.classes_
 # Split data
-X_train, X_test, y_train, y_test = train_test_split(X, y, stratify=y, random_state=0)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=.20)
+scaler = StandardScaler()
+scaler.fit(X_train)
+X_train = scaler.transform(X_train)
+X_test = scaler.transform(X_test)
+print("X_train shape:", X_train.shape)
+print("y_train shape:", y_train.shape)
+print("X_test shape:", X_test.shape)
+print("y_test shape:", y_test.shape)
+
 
 # Pipeline applying scaler and knn
-clf = Pipeline(
+'''clf = Pipeline(
     steps=[
         ("scaler", StandardScaler()),
         (
@@ -77,7 +86,7 @@ clf = Pipeline(
 )
 
 clf.fit(X_train, y_train)
-print("model score: %.3f" % clf.score(X_test, y_test))
+print("model score: %.3f" % clf.score(X_test, y_test))'''
 classifier = KNeighborsClassifier(n_neighbors=11, metric = "manhattan")
 classifier.fit(X_train, np.ravel(y_train,order='C'))
 y_pred = classifier.predict(X_test)
