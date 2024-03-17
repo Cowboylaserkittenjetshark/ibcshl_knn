@@ -87,7 +87,7 @@ print("y_test shape:", y_test.shape)
 
 clf.fit(X_train, y_train)
 print("model score: %.3f" % clf.score(X_test, y_test))'''
-classifier = KNeighborsClassifier(n_neighbors=11, metric = "manhattan")
+classifier = KNeighborsClassifier(n_neighbors=15, metric = "manhattan")
 classifier.fit(X_train, np.ravel(y_train,order='C'))
 y_pred = classifier.predict(X_test)
 print(confusion_matrix(y_test, y_pred))
@@ -161,7 +161,7 @@ print(cv_scores)
 print(np.mean(cv_scores))
 scaler = StandardScaler()
 scaler.fit(X)
-'''# Train with 10 fold cross validation by an outer k value ranges and nested cross validation scores.
+# Train with 10 fold cross validation by an outer k value ranges and nested cross validation scores.
 X = scaler.transform(X)
 scores = []
 k_range = range(1, 40)
@@ -172,4 +172,4 @@ for k in k_range:
 #print each cv score (accuracy) and average them
     print(k)
     print(cv_scores)
-    print(np.mean(cv_scores))'''
+    print(np.mean(cv_scores))
